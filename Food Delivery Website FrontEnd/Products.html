@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <!-- nav bar -->
+        <nav id="navbar">
+            <!-- Logo -->
+            <div id="logo">
+                <img src="logo.png" alt="OrderMeals.com">
+            </div>
+            <ul>
+                <li class="item"> <a href="Home.html#home" target="_blank">Home</a> </li>
+                <li class="item"> <a href="Home.html#features" target="_blank" >Services</a> </li>
+                <li class="item"> <a href="Products.html" target="_blank">Products</a> </li>
+                <li class="item"> <a href="About.html" target="_blank">About</a> </li>
+                <li class="item"> <a href="Home.html#review">Review</a> </li>
+                <li class="item"> <a href="Contact-us.html">Contact</a> </li>
+            </ul>
+            <div class="cart">
+                <i  class="fa fa-shopping-cart" ><span id="count">0</span></i>
+            </div>
+    </header>
+    <section id="home">
+        <h1 class="h-primary">
+            Products 
+        </h1>
+        <p>Home >> Products</p>
+        <p>Order your favourite meal now!!!</p>
+    </section>
+    <div class="products-container">
+        <div id="root"></div>
+        <div class="sidebar">
+            <div class="head"><p>My Cart</p></div>
+            <div id="cartItem" class="cart-content">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">₹ 0.00</h2>
+            </div>
+            <div>
+                <button id="btn-buy" onclick="toggleHide()">Order Now</button>
+                <form id="orderForm"  action="" name="myForm" onsubmit="return validateForm()" method="get">
+                    <input type="text" name="name" id="name" placeholder="Enter your name" required="">
+                    <input type="text" name="address" id="aname" placeholder="Enter your Address" required="">
+                    <input type="phone" name="phone" id="phone" placeholder="Enter your Phone Number" required="">
+                    <button id="submit">Confirm Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzN0TBKKHKxRjtRbQitNoWK1EtHIg0nTNW0SxRpGYQ_fsDk_FVcE_12oggLa-KOJDxF/exec'
+    const form = document.forms['myForm']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        // .then(response => alert("Thank you! your form is submitted successfully." ))
+        .then(() => {  window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+        alert("Thank you for ordering")
+    })
+  </script>
+<script src="script.js"></script>
+</html>

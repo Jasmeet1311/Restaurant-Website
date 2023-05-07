@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font awesome  link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <!-- nav bar -->
+        <nav id="navbar">
+            <!-- Logo -->
+            <div id="logo">
+                <img src="logo.png" alt="OrderMeals.com">
+            </div>
+            <ul>
+                <li class="item"> <a href="Home.html#home" target="_blank">Home</a> </li>
+                <li class="item"> <a href="Home.html#features" target="_blank" >Services</a> </li>
+                <li class="item"> <a href="Products.html" target="_blank">Products</a> </li>
+                <li class="item"> <a href="About.html" target="_blank">About</a> </li>
+                <li class="item"> <a href="Home.html#review">Review</a> </li>
+                <li class="item"> <a href="Contact-us.html">Contact</a> </li>
+            </ul>
+            <div class="cart">
+                <i  class="fa fa-shopping-cart" ><span id="count">0</span></i>
+            </div>
+    </header>
+    <!-- home section -->
+    <section id="home">
+        <h1 class="h-primary">
+            Contact Us
+        </h1>
+        <p>Home >> Contact</p>
+    </section>
+    <section class="contact">
+        <div class="icons-container">
+            <div class="icons-box">
+                <img src="phone.png" alt="Phone">
+                <h3>Our Number</h3>
+                <p>Call: +123 456 789</p>
+                <p>Call: +123 567 890</p>
+            </div>
+            <div class="icons-box">
+                <img src="email.png" alt="Email">
+                <h3>Our Email</h3>
+                <p>OrderMeals@gmail.com</p>
+                <p>OrderMeals@yahoo.com</p>
+            </div>
+            <div class="icons-box">
+                <img src="map.png" alt="Location">
+                <h3>Our Address</h3>
+                <p>Birmingham - United Kingdom</p>
+                <p>Bullring Shopping Centre Middle Hall East B5 4BE</p>
+            </div>  
+        </div>
+    </section>
+    <section class="row">
+        <form method="post" action="" name="contactform">
+            <h3>Get In Touch With Us</h3>
+            <div class="input-box">
+                <input type="text" name="name" id="name" placeholder="Enter your name" required="">
+                <input type="email" name="email" id="email" placeholder="Enter your Email" required="">
+            </div>
+            <div class="input-box">
+                <input type="phone" name="phone" id="phone" placeholder="Enter your Phone Number" required="">
+                <input type="text" name="subject" id="email" placeholder="Enter your Subject" required="">
+            </div>
+            <div class="input-box">
+                <textarea name="message" id="mess" cols="30" rows="10"placeholder="Enter Message" required=""></textarea>
+                <input type="submit" value="send message" class="btn">
+            </div>
+        </form>
+        <p><iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.078495594592!2d-1.8957784847571435!3d52.47771444711534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bc889effffff%3A0xa3df99020ffb7df6!2sBill&#39;s%20Birmingham%20Restaurant!5e0!3m2!1sen!2sin!4v1681211585716!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+    </section>
+    <footer class="center">
+        <p>
+            SUNDAY - THURSDAY: 11:30AM - 11PM | FRIDAY & SATURDAY: 11:30AM - 12AM
+        </p>
+        Copyright &copy; www.orderMeals.com. All rights reserved.
+
+    </footer>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyAtg3fDFis0F2-5M-EP_g2FvuLKF7PoHKG1j754E3A5lQuGWc7avV6-M3rMUJnnQMUfw/exec'
+    const form = document.forms['contactform']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        // .then(response => alert("Thank you! your form is submitted successfully." ))
+        .then(() => {  window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+        alert("Thank you! your form is submitted successfully.")
+    })
+  </script>
+</html>

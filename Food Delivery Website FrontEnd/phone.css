@@ -1,0 +1,85 @@
+/* Navigation menu */
+#navbar{
+    flex-direction: column;
+}
+.cart{
+    display: none;
+}
+.h-primary span{
+    display: inline;
+}
+#logo{
+    margin: 6px 3px;
+}
+#navbar ul li a{
+    font-size: 14px;
+    padding: 0px 7px;
+}
+/* Home section */
+#home{
+    height: 280px;
+    padding: 3px;  
+}
+#home::before{
+    height: 100%;
+    width: 100%;
+    
+}
+#home p{
+    font-size: 13px;
+}
+.btn{
+    font-size: 13px;
+    padding: 4px 8px;
+}
+
+.h-primary{
+    font-size: 26px;
+}
+
+/* Services section */
+#services {
+    flex-direction: column;
+}
+/* customer review */
+.client-section::before{
+    height: 100%;
+}
+.client-section{
+    height: 540px;
+}
+.client-section .box img{
+    height: 2.6rem;
+    width: 2.6rem;
+    border-radius: 100px;
+}
+.wrapper .box{
+    margin:0.2rem;
+    font-size:12px;
+}
+.wrapper .box .stars{
+    font-size: small;
+}
+.wrapper .box p{
+    font-size: 12px;
+}
+
+/* Products section */
+.wrapper{
+    flex-direction: column;
+}
+.products .product-slider .box img{
+    height: 81px;
+    width: 141px;
+}
+.products .product-slider .box .price{
+    font-size: small;
+}
+.h-secondary{
+    padding: 12px;
+    margin: 12px 3px;
+    font-size: 0.9rem;
+}
+footer{
+    display:none;
+}
